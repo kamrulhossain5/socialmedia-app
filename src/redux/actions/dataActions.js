@@ -7,7 +7,9 @@ import {
   LOADING_UI,
   SET_ERRORS,
   CLEAR_ERRORS,
-  CREATE_POST
+  CREATE_POST,
+  SET_POST,
+  STOP_LOADING_UI
 } from "../types";
 import axios from "axios";
 
@@ -30,10 +32,25 @@ export const getPosts = () => dispatch => {
     });
 };
 
-// Create a Post
-export const createPost = (newPost) => (dispatch) => {
+export const getPost = postId => dispatch => {
   dispatch({ type: LOADING_UI });
-  axios.post('/post', newPost)
+  axios
+    .get(`/post/${postId}`)
+    .then(res => {
+      dispatch({
+        type: SET_POST,
+        payload: res.data
+      });
+      dispatch({ type: STOP_LOADING_UI });
+    })
+    .catch(err => console.log(err));
+};
+
+// Create a Post
+export const createPost = newPost => dispatch => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .post("/post", newPost)
     .then(res => {
       dispatch({
         type: CREATE_POST,
@@ -45,9 +62,9 @@ export const createPost = (newPost) => (dispatch) => {
       dispatch({
         type: SET_ERRORS,
         payload: err.response.data
-      })
-    })
-}
+      });
+    });
+};
 
 // Like a post
 export const likePost = postId => dispatch => {
@@ -75,11 +92,15 @@ export const unlikePost = postId => dispatch => {
     .catch(err => console.log(err));
 };
 
-export const deletePost = (postId) => (dispatch) => {
-    axios
-      .delete(`/post/${postId}`)
-      .then(() => {
-        dispatch({ type: DELETE_POST, payload: postId });
-      })
-      .catch((err) => console.log(err));
-  };
+export const deletePost = postId => dispatch => {
+  axios
+    .delete(`/post/${postId}`)
+    .then(() => {
+      dispatch({ type: DELETE_POST, payload: postId });
+    })
+    .catch(err => console.log(err));
+};
+
+export const clearErrors = () => dispatch => {
+  dispatch({ type: CLEAR_ERRORS });
+};

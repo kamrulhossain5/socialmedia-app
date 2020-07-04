@@ -46,15 +46,36 @@ export default {
   },
   spreadThat: {
     submitButton: {
-      position: "relative"
+      position: "relative",
+      float: "right",
+      marginTop: 10
     },
     progressSpinner: {
       position: "absolute"
     },
     closeButton: {
       position: "absolute",
-      left: "90%",
-      top: "10%"
+      left: "91%",
+      top: "6%"
+    }
+  },
+  spreadDialog: {
+    invisibleSeparator: {
+      border: "none",
+      margin: 4
+    },
+    profileImage: {
+      maxWidth: 200,
+      height: 200,
+      borderRadius: "50%",
+      objectFit: "cover"
+    },
+    dialogContent: {
+      padding: 20
+    },
+    closeButton: {
+      position: 'absolute',
+      left: '90%'
     }
   }
 };

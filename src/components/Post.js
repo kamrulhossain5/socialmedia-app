@@ -6,6 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import PropTypes from "prop-types";
 import MyButton from "../util/MyButton";
 import DeletePost from "./DeletePost";
+import PostDialog from "./PostDialog";
 
 // MUI Stuff
 import Card from "@material-ui/core/Card";
@@ -24,7 +25,7 @@ import { likePost, unlikePost } from "../redux/actions/dataActions";
 
 const styles = {
   card: {
-    position: 'relative',
+    position: "relative",
     display: "flex",
     marginBottom: 20
   },
@@ -116,6 +117,7 @@ class Post extends Component {
             <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} comments</span>
+          <PostDialog postId={postId} userHandle={userHandle} />
         </CardContent>
       </Card>
     );

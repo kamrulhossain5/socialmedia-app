@@ -15,10 +15,10 @@ import CloseIcon from "@material-ui/icons/Close";
 
 // Redux stuff
 import { connect } from "react-redux";
-import { createPost } from "../redux/actions/dataActions";
+import { createPost, clearErrors } from "../redux/actions/dataActions";
 
 const styles = theme => ({
-  ...theme.spreadThat,
+  ...theme.spreadThat
 });
 
 class CreatePost extends Component {
@@ -28,29 +28,29 @@ class CreatePost extends Component {
     errors: {}
   };
   componentWillReceiveProps(nextProps) {
-      if(nextProps.UI.errors) {
-          this.setState({
-              errors: nextProps.UI.errors
-          })
-      };
-      if (!nextProps.UI.errors && !nextProps.UI.loading) {
-          this.setState({ body: ''});
-          this.handleClose();
-      }
+    if (nextProps.UI.errors) {
+      this.setState({
+        errors: nextProps.UI.errors
+      });
+    }
+    if (!nextProps.UI.errors && !nextProps.UI.loading) {
+      this.setState({ body: "", open: false, errors: {} });
+    }
   }
   handleOpen = () => {
     this.setState({ open: true });
   };
   handleClose = () => {
+    this.props.clearErrors();
     this.setState({ open: false, errors: {} });
   };
-  handleChange = (event) => {
-      this.setState({ [event.target.name]: event.target.value })
-  }
-  handleSubmit = (event) => {
-      event.preventDefault();
-      this.props.createPost({ body: this.state.body })
-  }
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.createPost({ body: this.state.body });
+  };
   render() {
     const { errors } = this.state;
     const {
@@ -116,6 +116,7 @@ class CreatePost extends Component {
 
 CreatePost.propTypes = {
   createPost: PropTypes.func.isRequired,
+  clearErrors: PropTypes.func.isRequired,
   UI: PropTypes.object.isRequired
 };
 
@@ -123,6 +124,6 @@ const mapStateToProps = state => ({
   UI: state.UI
 });
 
-export default connect(mapStateToProps, { createPost })(
+export default connect(mapStateToProps, { createPost, clearErrors })(
   withStyles(styles)(CreatePost)
 );
