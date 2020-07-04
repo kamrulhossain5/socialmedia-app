@@ -43,5 +43,18 @@ export default {
     progress: {
       position: "absolute"
     }
+  },
+  spreadThat: {
+    submitButton: {
+      position: "relative"
+    },
+    progressSpinner: {
+      position: "absolute"
+    },
+    closeButton: {
+      position: "absolute",
+      left: "90%",
+      top: "10%"
+    }
   }
 };
