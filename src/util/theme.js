@@ -42,9 +42,7 @@ export default {
     },
     progress: {
       position: "absolute"
-    }
-  },
-  spreadThat: {
+    },
     submitButton: {
       position: "relative",
       float: "right",
@@ -57,9 +55,7 @@ export default {
       position: "absolute",
       left: "91%",
       top: "6%"
-    }
-  },
-  spreadDialog: {
+    },
     invisibleSeparator: {
       border: "none",
       margin: 4
@@ -73,7 +69,7 @@ export default {
     dialogContent: {
       padding: 20
     },
-    closeButton: {
+    closeCButton: {
       position: 'absolute',
       left: '90%'
     },
@@ -85,6 +81,11 @@ export default {
       textAlign: 'center',
       marginTop: 50,
       marginBottom: 50
+    },
+    visibleSeparator: {
+      width: '100%',
+      borderBottom: '1px solid rgba(0,0,0,0.1)',
+      marginBottom: 20
     }
   }
 };
