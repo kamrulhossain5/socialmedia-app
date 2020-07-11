@@ -2,6 +2,7 @@
   "name": "socialapp-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kamrulhossain5.github.io/socialmedia-app",
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
@@ -21,6 +22,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://us-central1-socialapp-64e95.cloudfunctions.net/api"
+  "proxy": "https://us-central1-socialapp-64e95.cloudfunctions.net/api",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }

@@ -16,7 +16,7 @@ class home extends Component {
   render() {
     const { posts, loading } = this.props.data;
     let recentPostsMarkup = !loading ? (
-      posts.map(post => <Post key={post.postId} post={post} />)
+      posts.map((post) => <Post key={post.postId} post={post} />)
     ) : (
       <PostSkeleton/>
     );
