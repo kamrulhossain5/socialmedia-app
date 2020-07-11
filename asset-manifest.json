@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/socialmedia-app/static/css/main.bf38ceba.chunk.css",
+    "main.js": "/socialmedia-app/static/js/main.69264b09.chunk.js",
+    "main.js.map": "/socialmedia-app/static/js/main.69264b09.chunk.js.map",
+    "runtime-main.js": "/socialmedia-app/static/js/runtime-main.aff695a2.js",
+    "runtime-main.js.map": "/socialmedia-app/static/js/runtime-main.aff695a2.js.map",
+    "static/js/2.233f483c.chunk.js": "/socialmedia-app/static/js/2.233f483c.chunk.js",
+    "static/js/2.233f483c.chunk.js.map": "/socialmedia-app/static/js/2.233f483c.chunk.js.map",
+    "index.html": "/socialmedia-app/index.html",
+    "precache-manifest.4c4268d8f2968507c63a549ad49d90f2.js": "/socialmedia-app/precache-manifest.4c4268d8f2968507c63a549ad49d90f2.js",
+    "service-worker.js": "/socialmedia-app/service-worker.js",
+    "static/css/main.bf38ceba.chunk.css.map": "/socialmedia-app/static/css/main.bf38ceba.chunk.css.map",
+    "static/js/2.233f483c.chunk.js.LICENSE.txt": "/socialmedia-app/static/js/2.233f483c.chunk.js.LICENSE.txt",
+    "static/media/no-img.png": "/socialmedia-app/static/media/no-img.5a021ab9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aff695a2.js",
+    "static/js/2.233f483c.chunk.js",
+    "static/css/main.bf38ceba.chunk.css",
+    "static/js/main.69264b09.chunk.js"
+  ]
+}
