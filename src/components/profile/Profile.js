@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -37,6 +38,44 @@ class Profile extends Component {
   };
   handleEditPicture = () => {
     const fileInput = document.getElementById("imageInput");
+=======
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
+import EditDetails from './EditDetails';
+import MyButton from '../../util/MyButton';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
+// MUI stuff
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import MuiLink from '@material-ui/core/Link';
+import Paper from '@material-ui/core/Paper';
+// Icons
+import LocationOn from '@material-ui/icons/LocationOn';
+import LinkIcon from '@material-ui/icons/Link';
+import CalendarToday from '@material-ui/icons/CalendarToday';
+import EditIcon from '@material-ui/icons/Edit';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
+//Redux
+import { connect } from 'react-redux';
+import { logoutUser, uploadImage } from '../../redux/actions/userActions';
+
+const styles = (theme) => ({
+  ...theme
+});
+
+class Profile extends Component {
+  handleImageChange = (event) => {
+    const image = event.target.files[0];
+    const formData = new FormData();
+    formData.append('image', image, image.name);
+    this.props.uploadImage(formData);
+  };
+  handleEditPicture = () => {
+    const fileInput = document.getElementById('imageInput');
+>>>>>>> Updated Navbar and layout
     fileInput.click();
   };
   handleLogout = () => {
@@ -51,6 +90,10 @@ class Profile extends Component {
         authenticated
       }
     } = this.props;
+<<<<<<< HEAD
+=======
+
+>>>>>>> Updated Navbar and layout
     let profileMarkup = !loading ? (
       authenticated ? (
         <Paper className={classes.paper}>
@@ -94,14 +137,23 @@ class Profile extends Component {
                 <Fragment>
                   <LinkIcon color="primary" />
                   <a href={website} target="_blank" rel="noopener noreferrer">
+<<<<<<< HEAD
                     {" "}
+=======
+                    {' '}
+>>>>>>> Updated Navbar and layout
                     {website}
                   </a>
                   <hr />
                 </Fragment>
               )}
+<<<<<<< HEAD
               <CalendarToday color="primary" />{" "}
               <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
+=======
+              <CalendarToday color="primary" />{' '}
+              <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
+>>>>>>> Updated Navbar and layout
             </div>
             <MyButton tip="Logout" onClick={this.handleLogout}>
               <KeyboardReturn color="primary" />
@@ -113,6 +165,7 @@ class Profile extends Component {
         <Paper className={classes.paper}>
           <Typography variant="body2" align="center">
             No profile found, please login again
+<<<<<<< HEAD
             <div className={classes.buttons}>
               <Button
                 variant="contained"
@@ -137,11 +190,42 @@ class Profile extends Component {
     ) : (
       <ProfileSkeleton/>
     );
+=======
+          </Typography>
+          <div className={classes.buttons}>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/login"
+            >
+              Login
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/signup"
+            >
+              Signup
+            </Button>
+          </div>
+        </Paper>
+      )
+    ) : (
+      <ProfileSkeleton />
+    );
+
+>>>>>>> Updated Navbar and layout
     return profileMarkup;
   }
 }
 
+<<<<<<< HEAD
 const mapStateToProps = state => ({
+=======
+const mapStateToProps = (state) => ({
+>>>>>>> Updated Navbar and layout
   user: state.user
 });
 

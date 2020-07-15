@@ -79,4 +79,8 @@ DeletePost.propTypes = {
 export default connect(
   null,
   { deletePost }
+<<<<<<< HEAD
 )(withStyles(styles)(DeletePost));
+=======
+)(withStyles(styles)(DeletePost));
+>>>>>>> Updated Navbar and layout

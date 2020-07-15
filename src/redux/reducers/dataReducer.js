@@ -7,7 +7,11 @@ import {
   CREATE_POST,
   SET_POST,
   SUBMIT_COMMENT
+<<<<<<< HEAD
 } from "../types";
+=======
+} from '../types';
+>>>>>>> Updated Navbar and layout
 
 const initialState = {
   posts: [],
@@ -36,19 +40,35 @@ export default function(state = initialState, action) {
     case LIKE_POST:
     case UNLIKE_POST:
       let index = state.posts.findIndex(
+<<<<<<< HEAD
         post => post.postId === action.payload.postId
       );
       state.posts[index] = action.payload;
       if(state.post.postId === action.payload.postId) {
+=======
+        (post) => post.postId === action.payload.postId
+      );
+      state.posts[index] = action.payload;
+      if (state.post.postId === action.payload.postId) {
+>>>>>>> Updated Navbar and layout
         state.post = action.payload;
       }
       return {
         ...state
       };
     case DELETE_POST:
+<<<<<<< HEAD
       return {
         ...state,
         posts: state.posts.filter(post => post.postId !== action.payload)
+=======
+      index = state.posts.findIndex(
+        (post) => post.postId === action.payload
+      );
+      state.posts.splice(index, 1);
+      return {
+        ...state
+>>>>>>> Updated Navbar and layout
       };
     case CREATE_POST:
       return {
@@ -62,7 +82,11 @@ export default function(state = initialState, action) {
           ...state.post,
           comments: [action.payload, ...state.post.comments]
         }
+<<<<<<< HEAD
       }
+=======
+      };
+>>>>>>> Updated Navbar and layout
     default:
       return state;
   }

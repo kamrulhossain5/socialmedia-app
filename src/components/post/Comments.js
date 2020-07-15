@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -18,6 +19,27 @@ const styles = theme => ({
   },
   commentData: {
       marginLeft: 20
+=======
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
+// MUI
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
+const styles = (theme) => ({
+  ...theme,
+  commentImage: {
+    maxWidth: '100%',
+    height: 100,
+    objectFit: 'cover',
+    borderRadius: '50%'
+  },
+  commentData: {
+    marginLeft: 20
+>>>>>>> Updated Navbar and layout
   }
 });
 
@@ -50,15 +72,28 @@ class Comments extends Component {
                         {userHandle}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
+<<<<<<< HEAD
                         {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
                       </Typography>
                       <hr className={classes.invisibleSeparator} />
                       <Typography variant="body1">{body}</Typography>
+=======
+                        {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
+                      </Typography>
+                      <hr className={classes.invisibleSeparator} />
+                      <Typography variabnt="body1">{body}</Typography>
+>>>>>>> Updated Navbar and layout
                     </div>
                   </Grid>
                 </Grid>
               </Grid>
+<<<<<<< HEAD
               {index !== comments.length -1 && (<hr className={classes.visibleSeparator} />)}
+=======
+              {index !== comments.length - 1 && (
+                <hr className={classes.visibleSeparator} />
+              )}
+>>>>>>> Updated Navbar and layout
             </Fragment>
           );
         })}

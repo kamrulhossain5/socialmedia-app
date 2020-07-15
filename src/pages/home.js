@@ -22,12 +22,21 @@ class home extends Component {
     );
     return (
       <Grid container spacing={16}>
+<<<<<<< HEAD
         <Grid item sm={8} xs={12}>
           {recentPostsMarkup}
         </Grid>
         <Grid item sm={4} xs={12}>
           <Profile />
         </Grid>
+=======
+        <Grid item sm={4} xs={12}>
+          <Profile />
+        </Grid>
+        <Grid item sm={8} xs={12}>
+          {recentPostsMarkup}
+        </Grid>
+>>>>>>> Updated Navbar and layout
       </Grid>
     );
   }
