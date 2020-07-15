@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { Link } from "react-router-dom";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-import PropTypes from "prop-types";
-import MyButton from "../../util/MyButton";
-import DeletePost from "./DeletePost";
-import PostDialog from "./PostDialog";
-import LikeButton from './LikeButton'
-
-// MUI Stuff
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-
-// Icons
-import ChatIcon from "@material-ui/icons/Chat";
-
-// Redux
-import { connect } from "react-redux";
-
-const styles = {
-  card: {
-    position: "relative",
-    display: "flex",
-=======
 import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
@@ -51,7 +22,6 @@ const styles = {
   card: {
     position: 'relative',
     display: 'flex',
->>>>>>> Updated Navbar and layout
     marginBottom: 20
   },
   image: {
@@ -59,11 +29,7 @@ const styles = {
   },
   content: {
     padding: 25,
-<<<<<<< HEAD
-    objectFit: "cover"
-=======
     objectFit: 'cover'
->>>>>>> Updated Navbar and layout
   }
 };
 
@@ -86,10 +52,6 @@ class Post extends Component {
         credentials: { handle }
       }
     } = this.props;
-<<<<<<< HEAD
-=======
-
->>>>>>> Updated Navbar and layout
     const deleteButton =
       authenticated && userHandle === handle ? (
         <DeletePost postId={postId} />
@@ -115,25 +77,17 @@ class Post extends Component {
             {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
-<<<<<<< HEAD
-          <LikeButton postId={postId}/>
-=======
           <LikeButton postId={postId} />
->>>>>>> Updated Navbar and layout
           <span>{likeCount} Likes</span>
           <MyButton tip="comments">
             <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} comments</span>
-<<<<<<< HEAD
-          <PostDialog postId={postId} userHandle={userHandle} openDialog={this.props.openDialog}/>
-=======
           <PostDialog
             postId={postId}
             userHandle={userHandle}
             openDialog={this.props.openDialog}
           />
->>>>>>> Updated Navbar and layout
         </CardContent>
       </Card>
     );
@@ -147,18 +101,8 @@ Post.propTypes = {
   openDialog: PropTypes.bool
 };
 
-<<<<<<< HEAD
-const mapStateToProps = state => ({
-  user: state.user
-});
-
-export default connect(
-  mapStateToProps
-)(withStyles(styles)(Post));
-=======
 const mapStateToProps = (state) => ({
   user: state.user
 });
 
 export default connect(mapStateToProps)(withStyles(styles)(Post));
->>>>>>> Updated Navbar and layout

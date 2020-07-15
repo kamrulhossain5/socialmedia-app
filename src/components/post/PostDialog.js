@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
-import withStyles from "@material-ui/core/styles/withStyles";
-import MyButton from "../../util/MyButton";
-import LikeButton from './LikeButton';
-import Comments from './Comments';
-import CommentForm from './CommentForm'
-import dayjs from "dayjs";
-import { Link } from "react-router-dom";
-
-// MUI Stuff
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-
-// Icons
-import CloseIcon from "@material-ui/icons/Close";
-import UnfoldMore from "@material-ui/icons/UnfoldMore";
-import ChatIcon from "@material-ui/icons/Chat";
-
-// Redux Stuff
-import { connect } from "react-redux";
-import { getPost, clearErrors } from "../../redux/actions/dataActions";
-
-const styles = theme => ({
-  ...theme.spreadThis
-=======
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -75,7 +45,6 @@ const styles = (theme) => ({
     marginTop: 50,
     marginBottom: 50
   }
->>>>>>> Updated Navbar and layout
 });
 
 class PostDialog extends Component {
@@ -85,11 +54,7 @@ class PostDialog extends Component {
     newPath: ''
   };
   componentDidMount() {
-<<<<<<< HEAD
-    if(this.props.openDialog) {
-=======
     if (this.props.openDialog) {
->>>>>>> Updated Navbar and layout
       this.handleOpen();
     }
   }
@@ -111,10 +76,6 @@ class PostDialog extends Component {
     this.setState({ open: false });
     this.props.clearErrors();
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> Updated Navbar and layout
   render() {
     const {
       classes,
@@ -130,10 +91,6 @@ class PostDialog extends Component {
       },
       UI: { loading }
     } = this.props;
-<<<<<<< HEAD
-=======
-
->>>>>>> Updated Navbar and layout
     const dialogMarkup = loading ? (
       <div className={classes.spinnerDiv}>
         <CircularProgress size={200} thickness={2} />
@@ -154,11 +111,7 @@ class PostDialog extends Component {
           </Typography>
           <hr className={classes.invisibleSeparator} />
           <Typography variant="body2" color="textSecondary">
-<<<<<<< HEAD
-            {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
-=======
             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
->>>>>>> Updated Navbar and layout
           </Typography>
           <hr className={classes.invisibleSeparator} />
           <Typography variant="body1">{body}</Typography>
@@ -169,11 +122,7 @@ class PostDialog extends Component {
           </MyButton>
           <span>{commentCount} comments</span>
         </Grid>
-<<<<<<< HEAD
-        <hr className={classes.visibleSeparator}/>
-=======
         <hr className={classes.visibleSeparator} />
->>>>>>> Updated Navbar and layout
         <CommentForm postId={postId} />
         <Comments comments={comments} />
       </Grid>
@@ -182,33 +131,21 @@ class PostDialog extends Component {
       <Fragment>
         <MyButton
           onClick={this.handleOpen}
-<<<<<<< HEAD
-          tip="Expand post"
-=======
           tip="Expand Post"
->>>>>>> Updated Navbar and layout
           tipClassName={classes.expandButton}
         >
           <UnfoldMore color="primary" />
         </MyButton>
         <Dialog
           open={this.state.open}
-<<<<<<< HEAD
-          onClose={this.handleClass}
-=======
           onClose={this.handleClose}
->>>>>>> Updated Navbar and layout
           fullWidth
           maxWidth="sm"
         >
           <MyButton
             tip="Close"
             onClick={this.handleClose}
-<<<<<<< HEAD
-            tipClassName={classes.closeCButton}
-=======
             tipClassName={classes.closeButton}
->>>>>>> Updated Navbar and layout
           >
             <CloseIcon />
           </MyButton>
@@ -230,11 +167,7 @@ PostDialog.propTypes = {
   UI: PropTypes.object.isRequired
 };
 
-<<<<<<< HEAD
-const mapStateToProps = state => ({
-=======
 const mapStateToProps = (state) => ({
->>>>>>> Updated Navbar and layout
   post: state.data.post,
   UI: state.UI
 });

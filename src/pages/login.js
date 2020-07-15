@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import PropTypes from "prop-types";
-import AppIcon from "../images/login-icon.png";
-import { Link } from "react-router-dom";
-
-// MUI Stuff
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
-
-// Redux Stuff
-import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions/userActions';
-
-const styles = theme => ({
-  ...theme.spreadThis
-=======
 import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
@@ -37,20 +16,14 @@ import { loginUser } from '../redux/actions/userActions';
 
 const styles = (theme) => ({
   ...theme
->>>>>>> Updated Navbar and layout
 });
 
 class login extends Component {
   constructor() {
     super();
     this.state = {
-<<<<<<< HEAD
-      email: "",
-      password: "",
-=======
       email: '',
       password: '',
->>>>>>> Updated Navbar and layout
       errors: {}
     };
   }
@@ -59,11 +32,7 @@ class login extends Component {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
-<<<<<<< HEAD
-  handleSubmit = event => {
-=======
   handleSubmit = (event) => {
->>>>>>> Updated Navbar and layout
     event.preventDefault();
     const userData = {
       email: this.state.email,
@@ -71,36 +40,23 @@ class login extends Component {
     };
     this.props.loginUser(userData, this.props.history);
   };
-<<<<<<< HEAD
-  handleChange = event => {
-=======
   handleChange = (event) => {
->>>>>>> Updated Navbar and layout
     this.setState({
       [event.target.name]: event.target.value
     });
   };
   render() {
-<<<<<<< HEAD
-    const { classes, UI: { loading } } = this.props;
-    const { errors } = this.state;
-=======
     const {
       classes,
       UI: { loading }
     } = this.props;
     const { errors } = this.state;
 
->>>>>>> Updated Navbar and layout
     return (
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-<<<<<<< HEAD
-          <img src={AppIcon} alt="lightbulb" className={classes.image} />
-=======
           <img src={AppIcon} alt="monkey" className={classes.image} />
->>>>>>> Updated Navbar and layout
           <Typography variant="h2" className={classes.pageTitle}>
             Login
           </Typography>
@@ -110,11 +66,7 @@ class login extends Component {
               name="email"
               type="email"
               label="Email"
-<<<<<<< HEAD
-              className={classes.TextField}
-=======
               className={classes.textField}
->>>>>>> Updated Navbar and layout
               helperText={errors.email}
               error={errors.email ? true : false}
               value={this.state.email}
@@ -126,11 +78,7 @@ class login extends Component {
               name="password"
               type="password"
               label="Password"
-<<<<<<< HEAD
-              className={classes.TextField}
-=======
               className={classes.textField}
->>>>>>> Updated Navbar and layout
               helperText={errors.password}
               error={errors.password ? true : false}
               value={this.state.password}
@@ -180,15 +128,9 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
   loginUser
-<<<<<<< HEAD
-}
-
-export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(login));
-=======
 };
 
 export default connect(
   mapStateToProps,
   mapActionsToProps
 )(withStyles(styles)(login));
->>>>>>> Updated Navbar and layout

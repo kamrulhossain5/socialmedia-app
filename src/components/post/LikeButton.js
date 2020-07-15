@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import MyButton from "../../util/MyButton";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-
-// Icons
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
-
-// Redux
-import { connect } from "react-redux";
-import { likePost, unlikePost } from "../../redux/actions/dataActions";
-
-class LikeButton extends Component {
-  likedPost = () => {
-    if (
-      this.props.user.likes &&
-      this.props.user.likes.find(like => like.postId === this.props.postId)
-=======
 import React, { Component } from 'react';
 import MyButton from '../../util/MyButton';
 import { Link } from 'react-router-dom';
@@ -36,7 +16,6 @@ export class LikeButton extends Component {
       this.props.user.likes.find(
         (like) => like.postId === this.props.postId
       )
->>>>>>> Updated Navbar and layout
     )
       return true;
     else return false;
@@ -70,20 +49,12 @@ export class LikeButton extends Component {
 
 LikeButton.propTypes = {
   user: PropTypes.object.isRequired,
-<<<<<<< HEAD
-  postId: PropTypes.func.isRequired,
-  unlikePost: PropTypes.func.isRequired
-};
-
-const mapStateToProps = state => ({
-=======
   postId: PropTypes.string.isRequired,
   likePost: PropTypes.func.isRequired,
   unlikePost: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
->>>>>>> Updated Navbar and layout
   user: state.user
 });
 
@@ -91,12 +62,8 @@ const mapActionsToProps = {
   likePost,
   unlikePost
 };
-<<<<<<< HEAD
-export default connect(mapStateToProps, mapActionsToProps)(LikeButton);
-=======
 
 export default connect(
   mapStateToProps,
   mapActionsToProps
 )(LikeButton);
->>>>>>> Updated Navbar and layout

@@ -6,11 +6,7 @@ import {
   LIKE_POST,
   UNLIKE_POST,
   MARK_NOTIFICATIONS_READ
-<<<<<<< HEAD
-} from "../types";
-=======
 } from '../types';
->>>>>>> Updated Navbar and layout
 
 const initialState = {
   authenticated: false,
@@ -54,19 +50,12 @@ export default function(state = initialState, action) {
     case UNLIKE_POST:
       return {
         ...state,
-<<<<<<< HEAD
-        likes: state.likes.filter(like => like.postId !== action.payload.postId)
-      };
-    case MARK_NOTIFICATIONS_READ:
-      state.notifications.forEach(not => not.read = true);
-=======
         likes: state.likes.filter(
           (like) => like.postId !== action.payload.postId
         )
       };
     case MARK_NOTIFICATIONS_READ:
       state.notifications.forEach((not) => (not.read = true));
->>>>>>> Updated Navbar and layout
       return {
         ...state
       };

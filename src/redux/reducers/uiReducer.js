@@ -3,11 +3,7 @@ import {
   CLEAR_ERRORS,
   LOADING_UI,
   STOP_LOADING_UI
-<<<<<<< HEAD
-} from "../types";
-=======
 } from '../types';
->>>>>>> Updated Navbar and layout
 
 const initialState = {
   loading: false,
